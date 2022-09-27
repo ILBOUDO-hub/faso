@@ -210,7 +210,7 @@ class _galerieState extends State<galerie> {
                       style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),
                     ),
                     ItemsWidget()
-                  ],
+                  ], 
                 )),
               ),
               const SizedBox(

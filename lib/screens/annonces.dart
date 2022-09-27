@@ -1,8 +1,8 @@
 import 'dart:io';
-import 'package:faso/sign_in.dart';
+import 'package:faso/login/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:faso/custom_text.dart';
+import 'package:faso/constants/custom_text.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:image_picker/image_picker.dart';
 

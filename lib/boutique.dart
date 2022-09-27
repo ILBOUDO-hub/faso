@@ -1,6 +1,6 @@
-import 'package:faso/galerie.dart';
+import 'package:faso/screens/parametres/galerie.dart';
 import 'package:flutter/material.dart';
-import 'package:faso/custom_text.dart';
+import 'package:faso/constants/custom_text.dart';
 import 'package:faso/widgets/itemsWidget.dart';
 
 class TabBarClass extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:faso/custom_text.dart';
+import 'package:faso/constants/custom_text.dart';
 
 
 class Annonces extends StatefulWidget {

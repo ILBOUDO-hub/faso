@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:faso/forum.dart';
 import 'package:faso/boutique.dart';
-import 'package:faso/produit.dart';
 import 'package:faso/widgets/categoriesWidgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 

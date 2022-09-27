@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:faso/main.dart';
-import 'package:faso/sign_up.dart';
+import 'package:faso/login/sign_up.dart';
 import 'reusable_widgets.dart';
 
 

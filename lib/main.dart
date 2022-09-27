@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:faso/annonces.dart';
-import 'package:faso/sign_up.dart';
-import 'package:faso/home.dart';
-import 'package:faso/message.dart';
-import 'package:faso/profile.dart';
-import 'package:faso/sign_in.dart';
-import 'package:faso/category.dart';
+import 'package:faso/screens/annonces.dart';
+import 'package:faso/login/sign_up.dart';
+import 'package:faso/screens/home.dart';
+import 'package:faso/screens/message.dart';
+import 'package:faso/screens/profile.dart';
+import 'package:faso/login/sign_in.dart';
+import 'package:faso/screens/category.dart';
 
 void main() {
   runApp(

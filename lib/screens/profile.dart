@@ -1,9 +1,9 @@
-import 'package:faso/favoris.dart';
+import 'package:faso/screens/parametres/favoris.dart';
 import 'package:flutter/material.dart';
-import 'package:faso/assistance.dart';
-import 'package:faso/galerie.dart';
-import 'package:faso/infos.dart';
-import 'package:faso/custom_text.dart';
+import 'package:faso/screens/parametres/assistance.dart';
+import 'package:faso/screens/parametres/galerie.dart';
+import 'package:faso/screens/parametres/infos.dart';
+import 'package:faso/constants/custom_text.dart';
 
 
 class PageProfile extends StatefulWidget {

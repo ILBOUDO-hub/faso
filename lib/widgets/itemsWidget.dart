@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:faso/home.dart';
-import 'package:faso/home.dart';
+import 'package:faso/screens/home.dart';
+import 'package:faso/screens/home.dart';
 
 import '../forum.dart';
 

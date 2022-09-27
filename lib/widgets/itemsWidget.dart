@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:faso/screens/home.dart';
-import 'package:faso/screens/home.dart';
+import 'package:faso/screens/forum.dart';
 
-import '../forum.dart';
 
 class ItemsWidget extends StatelessWidget {
   @override

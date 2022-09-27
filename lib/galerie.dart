@@ -189,7 +189,7 @@ class _galerieState extends State<galerie> {
                     height: 50,
                     width: double.infinity,
                     padding: EdgeInsets.only(left: 15, right: 1, top: 5),
-                    child: Text(
+                    child: const Text(
                       'Localisation: Ouagadougou / Karpala',
                       textAlign: TextAlign.justify,
                       style: TextStyle(

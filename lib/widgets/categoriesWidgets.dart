@@ -1,5 +1,12 @@
+import 'package:faso/screens/categories/accessoire.dart';
+import 'package:faso/screens/categories/appareil.dart';
+import 'package:faso/screens/categories/immobilier.dart';
 import 'package:faso/screens/categories/mode.dart';
+import 'package:faso/screens/categories/voiture.dart';
 import 'package:flutter/material.dart';
+
+import '../screens/category.dart';
+
 
 class categoriesWidget extends StatefulWidget {
   @override
@@ -9,6 +16,14 @@ class categoriesWidget extends StatefulWidget {
 class _categoriesWidgetState extends State<categoriesWidget> {
   final commentaireController = TextEditingController();
   List <String> ListCategories =["Vêtement","Mode","Voiture","Accessoire","Immobilier","Téléphone"];
+    final List<Widget> _tabList = [
+    Category(),
+    Mode(),
+    Voiture(),
+    Accessoire(),
+    Immobilier(),
+    Appareil(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +45,7 @@ class _categoriesWidgetState extends State<categoriesWidget> {
         onTap: () {
                 Navigator.push(context,
                   MaterialPageRoute(builder: (BuildContext context) {
-                  return Mode();
+                  return _tabList[i];
                 })); 
         },
                   child: Row(

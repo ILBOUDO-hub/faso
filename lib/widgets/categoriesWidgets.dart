@@ -1,5 +1,5 @@
+import 'package:faso/screens/categories/mode.dart';
 import 'package:flutter/material.dart';
-
 
 class categoriesWidget extends StatefulWidget {
   @override
@@ -8,7 +8,7 @@ class categoriesWidget extends StatefulWidget {
 
 class _categoriesWidgetState extends State<categoriesWidget> {
   final commentaireController = TextEditingController();
-  List <String> ListCategories =["Vêtement","Sac","Voiture","Accessoire","Immobilier","Téléphone"];
+  List <String> ListCategories =["Vêtement","Mode","Voiture","Accessoire","Immobilier","Téléphone"];
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,16 @@ class _categoriesWidgetState extends State<categoriesWidget> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),),
-                child: Row(
+                child: InkWell(
+                          highlightColor: Colors.transparent,
+        splashColor: Colors.transparent,
+        onTap: () {
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (BuildContext context) {
+                  return Mode();
+                })); 
+        },
+                  child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
             
@@ -43,6 +52,7 @@ class _categoriesWidgetState extends State<categoriesWidget> {
                     ),
                     Text(ListCategories[i], style: TextStyle( fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),)
                   ],
+                ),
                 ),
 
 

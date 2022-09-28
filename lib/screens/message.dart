@@ -58,11 +58,20 @@ class _MessageState extends State<Message> {
                     });
                   }),
                   child: Row(
-                    children: const [
-                      Icon(
-                        Icons.account_circle,
-                        color: Colors.black,
+                    children: [
+                  ClipOval( 
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.brown,
+                        image: DecorationImage(
+                          image: AssetImage("assets/categories/4.jpg",),
+                          fit: BoxFit.cover,
+                        ),
                       ),
+                    ),
+                    ),
                       Text(
                         '  BAKO Maxime',
                         style: TextStyle(
@@ -98,11 +107,20 @@ class _MessageState extends State<Message> {
                     });
                   }),
                   child: Row(
-                    children: const [
-                      Icon(
-                        Icons.account_circle,
-                        color: Colors.black,
+                    children: [
+                  ClipOval( 
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.brown,
+                        image: DecorationImage(
+                          image: AssetImage("assets/categories/5.jpg",),
+                          fit: BoxFit.cover,
+                        ),
                       ),
+                    ),
+                    ),
                       Text(
                         '  DIALLO Fadilatou',
                         style: TextStyle(
@@ -138,11 +156,20 @@ class _MessageState extends State<Message> {
                     });
                   }),
                   child: Row(
-                    children: const [
-                      Icon(
-                        Icons.account_circle,
-                        color: Colors.black,
+                    children: [
+                  ClipOval( 
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.brown,
+                        image: DecorationImage(
+                          image: AssetImage("assets/categories/3.jpg",),
+                          fit: BoxFit.cover,
+                        ),
                       ),
+                    ),
+                    ),
                       Text(
                         '  NANA Elodie',
                         style: TextStyle(
@@ -178,11 +205,20 @@ class _MessageState extends State<Message> {
                     });
                   }),
                   child: Row(
-                    children: const [
-                      Icon(
-                        Icons.account_circle,
-                        color: Colors.black,
+                    children: [
+                  ClipOval( 
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.brown,
+                        image: DecorationImage(
+                          image: AssetImage("assets/categories/2.jpg",),
+                          fit: BoxFit.cover,
+                        ),
                       ),
+                    ),
+                    ),
                       Text(
                         '  SAWADOGO Haida',
                         style: TextStyle(
@@ -218,11 +254,20 @@ class _MessageState extends State<Message> {
                     });
                   }),
                   child: Row(
-                    children: const [
-                      Icon(
-                        Icons.account_circle,
-                        color: Colors.black,
+                    children: [
+                  ClipOval( 
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.brown,
+                        image: DecorationImage(
+                          image: AssetImage("assets/categories/6.jpg",),
+                          fit: BoxFit.cover,
+                        ),
                       ),
+                    ),
+                    ),
                       Text(
                         '  ROUAMBA Waly',
                         style: TextStyle(
@@ -258,11 +303,20 @@ class _MessageState extends State<Message> {
                     });
                   }),
                   child: Row(
-                    children: const [
-                      Icon(
-                        Icons.account_circle,
-                        color: Colors.black,
+                    children: [
+                  ClipOval( 
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.brown,
+                        image: DecorationImage(
+                          image: AssetImage("assets/categories/1.jpg",),
+                          fit: BoxFit.cover,
+                        ),
                       ),
+                    ),
+                    ),
                       Text(
                         '  BADO Roch',
                         style: TextStyle(
@@ -298,11 +352,20 @@ class _MessageState extends State<Message> {
                     });
                   }),
                   child: Row(
-                    children: const [
-                      Icon(
-                        Icons.account_circle,
-                        color: Colors.black,
+                    children: [
+                  ClipOval( 
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.brown,
+                        image: DecorationImage(
+                          image: AssetImage("assets/categories/1.jpg",),
+                          fit: BoxFit.cover,
+                        ),
                       ),
+                    ),
+                    ),
                       Text(
                         '  Ouedraogo Isaac',
                         style: TextStyle(

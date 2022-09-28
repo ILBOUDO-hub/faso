@@ -22,7 +22,7 @@ class _ImmobilierSate extends State<Immobilier> {
             ),
             categoriesWidget(),
             SizedBox(height: 10,),
-            Text('ImmobilierS',textAlign: TextAlign.center, style: TextStyle(fontSize: 20),),
+            Text('Immobiliers',textAlign: TextAlign.center, style: TextStyle(fontSize: 20),),
             ItemsWidget(),
           //  Annonces(),
 

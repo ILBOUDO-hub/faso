@@ -4,6 +4,15 @@ import 'package:faso/boutique.dart';
 import 'package:faso/widgets/categoriesWidgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'package:faso/screens/categories/accessoire.dart';
+import 'package:faso/screens/categories/appareil.dart';
+import 'package:faso/screens/categories/immobilier.dart';
+import 'package:faso/screens/categories/mode.dart';
+import 'package:faso/screens/categories/voiture.dart';
+import 'package:flutter/material.dart';
+
+import '../screens/category.dart';
+
 class MyCustomUI extends StatefulWidget {
   @override
   _MyCustomUIState createState() => _MyCustomUIState();
@@ -31,6 +40,23 @@ class _MyCustomUIState extends State<MyCustomUI>
 
     _controller.forward();
   }
+
+  List<String> ListCategories = [
+    "Vêtement",
+    "Mode",
+    "Voiture",
+    "Accessoire",
+    "Immobilier",
+    "Téléphone"
+  ];
+  final List<Widget> _tabList = [
+    Category(),
+    Mode(),
+    Voiture(),
+    Accessoire(),
+    Immobilier(),
+    Appareil(),
+  ];
 
   @override
   void dispose() {
@@ -112,11 +138,11 @@ class _MyCustomUIState extends State<MyCustomUI>
           ),
           Container(
             color: Color(0xffF5F5F5),
-           // Container pour la barre de recherche
+            // Container pour la barre de recherche
             child: Container(
               alignment: Alignment.center,
               height: _w / 8.5,
-              width: _w / 0.5, 
+              width: _w / 0.5,
               margin: EdgeInsets.all(10),
               padding: EdgeInsets.symmetric(horizontal: _w / 60),
               decoration: BoxDecoration(
@@ -139,8 +165,8 @@ class _MyCustomUIState extends State<MyCustomUI>
                       color: Colors.black.withOpacity(.4),
                       fontWeight: FontWeight.w600,
                       fontSize: _w / 22),
-                  prefixIcon:
-                      Icon(Icons.search,size: 30, color: Colors.black.withOpacity(.6)),
+                  prefixIcon: Icon(Icons.search,
+                      size: 30, color: Colors.black.withOpacity(.6)),
                   hintText: 'Rechercher un produit.....',
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -150,7 +176,7 @@ class _MyCustomUIState extends State<MyCustomUI>
               ),
             ),
           ),
-         // settingIcon(),
+          // settingIcon(),
           const SizedBox(
             height: 50,
           ),
@@ -198,6 +224,27 @@ class _MyCustomUIState extends State<MyCustomUI>
       ),
     );
   }
+
+  /*
+  Widget categoriesWidget(){
+    return Scaffold(
+          appBar: AppBar(
+            title: const Text('Assistance'),
+            centerTitle: true,
+            titleTextStyle: const TextStyle(
+                fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
+            backgroundColor: Colors.brown,
+            leading: IconButton(
+              icon: const Icon(
+                Icons.arrow_back,
+                color: Colors.white,
+              ),
+              onPressed: () => Navigator.maybePop(context),
+            ),
+          ),
+          body: categoriesWidget(),
+    );
+  } */
 
   Widget searchBar() {
     double _w = MediaQuery.of(context).size.width;
@@ -263,17 +310,87 @@ class _MyCustomUIState extends State<MyCustomUI>
             ],
           ), */
 
-            SizedBox(
-              //Code le widget des categories
-              height: 58.0,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  categoriesWidget(),
-                ],
-              ),
+          SizedBox(
+            //Code le widget des categories
+            height: 58.0,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                Row(
+                  children: [
+                    for (int i = 1; i < 6; i++)
+                      // for(int j=1; j<6; j++)
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 10),
+                        padding:
+                            EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: InkWell(
+                          highlightColor: Colors.transparent,
+                          splashColor: Colors.transparent,
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (BuildContext context) {
+                              return Scaffold(
+                                appBar: AppBar(
+                                  title: const Text('YATOU'),
+                                  centerTitle: true,
+                                  titleTextStyle: const TextStyle(
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
+                                  backgroundColor: Colors.brown,
+                                  leading: IconButton(
+                                    icon: const Icon(
+                                      Icons.arrow_back,
+                                      color: Colors.white,
+                                    ),
+                                    onPressed: () =>
+                                        Navigator.maybePop(context),
+                                  ),
+                                ),
+                                body: _tabList[i],
+                              );
+                            }));
+                          },
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              ClipOval(
+                                child: Container(
+                                  height: 40,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                    color: Colors.brown,
+                                    image: DecorationImage(
+                                      image: AssetImage(
+                                        "assets/categories/$i.jpg",
+                                      ),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                ListCategories[i],
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
+              ],
             ),
-  
+          ),
+
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -302,20 +419,17 @@ class _MyCustomUIState extends State<MyCustomUI>
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: <Widget>[
-                for(int i=1; i<6; i++)
-                
-                    
-    Container(
-      margin: const EdgeInsets.all(2.0),
-      width: 200.0,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/categories/$i.jpg"),
-            fit: BoxFit.cover,
-          ),
-          borderRadius: BorderRadius.circular(10.0)),
-    )
-              
+                for (int i = 1; i < 6; i++)
+                  Container(
+                    margin: const EdgeInsets.all(2.0),
+                    width: 200.0,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage("assets/categories/$i.jpg"),
+                          fit: BoxFit.cover,
+                        ),
+                        borderRadius: BorderRadius.circular(10.0)),
+                  )
               ],
             ),
           ),
@@ -408,7 +522,7 @@ class _MyCustomUIState extends State<MyCustomUI>
                 width: _w / 2.36,
                 height: _w / 2.6,
                 decoration: BoxDecoration(
-                 // color: Color(0xff5C71F3),
+                  // color: Color(0xff5C71F3),
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(10),
                   ),
@@ -419,18 +533,24 @@ class _MyCustomUIState extends State<MyCustomUI>
                   ),
                 ),
                 child: Container(
-                 // Code pour le nombre de photo.
+                  // Code pour le nombre de photo.
                   width: 38,
                   margin: EdgeInsets.only(bottom: 4.0, right: 4.0),
                   padding: EdgeInsets.all(2),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(.30),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(.30),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   child: Row(
                     children: [
-                      Text('2', style: TextStyle(color: Colors.white),),
-                      Icon(Icons.camera,color: Colors.white,),
+                      Text(
+                        '2',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Icon(
+                        Icons.camera,
+                        color: Colors.white,
+                      ),
                     ],
                   ),
                 ),
@@ -439,7 +559,7 @@ class _MyCustomUIState extends State<MyCustomUI>
                   'Add image here',
                   textScaleFactor: 1.2,
                   style: TextStyle(color: Colors.white),
-                ),*/ 
+                ),*/
               ),
               Container(
                 height: _w / 6,
@@ -524,25 +644,24 @@ class RouteWhereYouGo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          appBar: AppBar(
-            title: const Text('Votre produit'),
-            centerTitle: true,
-            titleTextStyle: const TextStyle(
-                fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
-            backgroundColor: Colors.brown,
-            leading: IconButton(
-              icon: const Icon(
-                Icons.arrow_back,
-                color: Colors.white,
-              ),
-              onPressed: () => Navigator.maybePop(context),
+        appBar: AppBar(
+          title: const Text('Votre produit'),
+          centerTitle: true,
+          titleTextStyle: const TextStyle(
+              fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
+          backgroundColor: Colors.brown,
+          leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.white,
             ),
+            onPressed: () => Navigator.maybePop(context),
           ),
-
+        ),
         body: Container(
-          color: Colors.white,
-          alignment: Alignment.center,
-          margin: EdgeInsets.all(20),
+            color: Colors.white,
+            alignment: Alignment.center,
+            margin: EdgeInsets.all(20),
             child: SizedBox(
               width: MediaQuery.of(context).size.width * 0.90,
               child: Card(
@@ -550,134 +669,126 @@ class RouteWhereYouGo extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                  Container(
-                  //  width: 400,
-                    height: MediaQuery.of(context).size.height * 0.3,
-                    decoration: const BoxDecoration(
-                      /*  borderRadius: BorderRadius.circular(200.0),
+                    Container(
+                      //  width: 400,
+                      height: MediaQuery.of(context).size.height * 0.3,
+                      decoration: const BoxDecoration(
+                        /*  borderRadius: BorderRadius.circular(200.0),
                 border: Border.all(color: Colors.white),*/
-                      color: Colors.blue,
-                      image: DecorationImage(
-                        image: AssetImage("assets/images/audi2.jpg"),
-                        fit: BoxFit.cover,
+                        color: Colors.blue,
+                        image: DecorationImage(
+                          image: AssetImage("assets/images/audi2.jpg"),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
-                  ),
                     Padding(
                       padding: const EdgeInsets.all(24.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                            const Text(
-                              "Audi A8",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18.0,
-                              ),
+                          const Text(
+                            "Audi A8",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18.0,
                             ),
-                          const SizedBox(height: 8),
-                                            Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                         Row(
-                            children: List.generate(
-                              5, 
-                              (index) => Icon(
-                                Icons.star,
-                                size:15.0,
-                                color: index == 4 ? Colors.grey : Colors.orange,
-                                )).toList().cast<Widget>(),
                           ),
-
-                      IconButton(
-                        icon: const Icon(
-                          Icons.person,
-                          size: 20,
-                        ),
-                        onPressed: () {
-                          Navigator.push(context,
-                            MaterialPageRoute(builder: (BuildContext context) {
-                            return TabBarClass();
-                          }));      
-                        },
-                      ),
-                      IconButton(
-                        icon: const Icon(
-                          Icons.favorite,
-                          size: 20,
-                        ),
-                        onPressed: () {},
-                      ),
-                      IconButton(
-                        icon: const Icon(
-                          Icons.share,
-                          size: 20,
-                        ),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
-
+                          const SizedBox(height: 8),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Row(
+                                children: List.generate(
+                                    5,
+                                    (index) => Icon(
+                                          Icons.star,
+                                          size: 15.0,
+                                          color: index == 4
+                                              ? Colors.grey
+                                              : Colors.orange,
+                                        )).toList().cast<Widget>(),
+                              ),
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.person,
+                                  size: 20,
+                                ),
+                                onPressed: () {
+                                  Navigator.push(context, MaterialPageRoute(
+                                      builder: (BuildContext context) {
+                                    return TabBarClass();
+                                  }));
+                                },
+                              ),
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.favorite,
+                                  size: 20,
+                                ),
+                                onPressed: () {},
+                              ),
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.share,
+                                  size: 20,
+                                ),
+                                onPressed: () {},
+                              ),
+                            ],
+                          ),
                           const SizedBox(height: 5),
-                            const Text(
-                              "Taille: 200 cm\n\nCouleur: Rouge\n\nDescription: Belle voiture rouge Ferrari électrique, robuste avec un confort pour ces 5 passagers.\n",
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 16),
-                              textAlign: TextAlign.justify,
-                            ),
-
+                          const Text(
+                            "Taille: 200 cm\n\nCouleur: Rouge\n\nDescription: Belle voiture rouge Ferrari électrique, robuste avec un confort pour ces 5 passagers.\n",
+                            style: TextStyle(color: Colors.black, fontSize: 16),
+                            textAlign: TextAlign.justify,
+                          ),
                           const SizedBox(height: 5),
-
-                            Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  FloatingActionButton.extended(
-                                    extendedPadding: const EdgeInsets.all(15.0),
-                                    label: const Text(
-                                      'Ecrire',
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                FloatingActionButton.extended(
+                                  extendedPadding: const EdgeInsets.all(15.0),
+                                  label: const Text(
+                                    'Ecrire',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  icon: Icon(Icons.message_outlined),
+                                  backgroundColor: Colors.brown,
+                                  onPressed: () {
+                                    Navigator.push(context, MaterialPageRoute(
+                                        builder: (BuildContext context) {
+                                      return MyApp();
+                                    }));
+                                  },
+                                ),
+                                const FloatingActionButton.extended(
+                                    extendedPadding: EdgeInsets.all(15.0),
+                                    label: Text(
+                                      'Appeler',
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 15,
                                         color: Colors.white,
                                       ),
                                     ),
-                                    icon: Icon(Icons.message_outlined),
+                                    icon: Icon(Icons.phone),
                                     backgroundColor: Colors.brown,
-                                    onPressed: () {
-                                      Navigator.push(context, MaterialPageRoute(
-                                          builder: (BuildContext context) {
-                                        return MyApp();
-                                      }));
-                                    },
-                                  ),
-                                  const FloatingActionButton.extended(
-                                      extendedPadding: EdgeInsets.all(15.0),
-                                      label: Text(
-                                        'Appeler',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15,
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                       icon: Icon(Icons.phone),
-                                       backgroundColor: Colors.brown,
-                                       onPressed: _makingPhoneCall),
-                                 ]),
-                          
+                                    onPressed: _makingPhoneCall),
+                              ]),
                         ],
-                      ), 
+                      ),
                     ),
                   ],
                 ),
               ),
-            )
-        ));
+            )));
   }
-
 }
-
 
 _makingPhoneCall() async {
   const url = 'tel:+22661319367';

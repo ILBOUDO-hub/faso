@@ -22,7 +22,13 @@ class _VoitureSate extends State<Voiture> {
             ),
             categoriesWidget(),
             SizedBox(height: 10,),
-            Text('Automobiles',textAlign: TextAlign.center, style: TextStyle(fontSize: 20),),
+            Container(
+              height: 50,
+              width: 200,
+              color: Color.fromARGB(255, 189, 132, 110),
+              padding: EdgeInsets.all(10),
+              child:  Text('Automobiles',textAlign: TextAlign.center, style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+            ),
             ItemsWidget(),
           //  Annonces(),
 

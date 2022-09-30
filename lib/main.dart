@@ -1,3 +1,4 @@
+import 'package:faso/screens/categories/mode.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:faso/screens/annonces.dart';
@@ -34,7 +35,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
     Annonces(),
     Message(),
     PageProfile(),
-    Category(),
+    Mode(),
   ];
 
   final PageStorageBucket bucket = PageStorageBucket();
@@ -114,7 +115,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
                   minWidth: 40,
                   onPressed: () {
                     setState(() {
-                      currentSreen = Category();
+                      currentSreen = Mode();
                       currentIndex = 4;
                     });
                   },

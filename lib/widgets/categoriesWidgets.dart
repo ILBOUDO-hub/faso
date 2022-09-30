@@ -15,14 +15,14 @@ class categoriesWidget extends StatefulWidget {
 
 class _categoriesWidgetState extends State<categoriesWidget> {
   final commentaireController = TextEditingController();
-  List <String> ListCategories =["Vêtement","Mode","Voiture","Accessoire","Immobilier","Téléphone"];
+  List <String> ListCategories =["Vêtement","Mode","Voiture","Appareil","Meuble","Immobilier"];
     final List<Widget> _tabList = [
     Category(),
     Mode(),
     Voiture(),
+    Appareil(),
     Accessoire(),
     Immobilier(),
-    Appareil(),
   ];
 
   @override

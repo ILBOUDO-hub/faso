@@ -1,3 +1,4 @@
+import 'package:faso/screens/categories/produit.dart';
 import 'package:flutter/material.dart';
 import 'package:faso/screens/home.dart';
 import 'package:faso/screens/forum.dart';
@@ -6,7 +7,7 @@ import 'package:faso/screens/forum.dart';
 class ItemsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-        double _w = MediaQuery.of(context).size.width;
+    double _w = MediaQuery.of(context).size.width;
     return GridView.count( 
       childAspectRatio: 0.815,
       physics: NeverScrollableScrollPhysics(),
@@ -27,7 +28,13 @@ class ItemsWidget extends StatelessWidget {
         splashColor: Colors.transparent,
         onTap: () {
           Navigator.of(context)
-              .push(MyFadeRoute(route: RouteWhereYouGo(), page: PageSport()));
+              .push(MyFadeRoute(route: RouteWhereYouGo(), page: PageSport())
+          ); 
+          
+              /*  Navigator.push(context,
+                      new MaterialPageRoute(builder: (BuildContext context) {
+                    return Produit();
+                  })); */
         },
         child: Container(
           width: _w / 2.36,
